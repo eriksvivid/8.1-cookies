@@ -1,36 +1,45 @@
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
+
+$('.cart-button').on('click', function(e){
+  e.stopPropagation();
+  window.location = 'cart.html';
+});
+
+var shirts = [];
+
+$('.button1').on('click', function(e){
+  e.preventDefault();
+  var shirt = $('#tshirt1').html();
+  var shirtQty = $('#quantity').val();
+  var size = $('.select option:selected').html();
+  var shirtSelection = {shirt: shirt, shirtQty: shirtQty, size: size};
+  shirts.push(shirtSelection);
+  localStorage.setItem('myShirt', JSON.stringify(shirtSelection));
+  console.log(localStorage.getItem('myShirt'));
+});
 
 
-document.cookie="username=Cookie Monster";
-
-var loggedIn = document.cookie;
-
-console.log(loggedIn);
-
-var cookies = loggedIn.split(';');
-for(var i=0; i < cookies.length; i++){
-  console.log(cookies[i]);
-}
-
-console.log()
+$('.button2').on('click', function(e){
+  e.preventDefault();
+  var shirt = $('#tshirt2').html();
+  var shirtQty = $('#quantity2').val();
+  var size = $('.select2 option:selected').html();
+  var shirtSelection = {shirt: shirt, shirtQty: shirtQty, size: size};
+  shirts.push(shirtSelection);
+  localStorage.setItem('myShirt', JSON.stringify(shirtSelection));
+  console.log(localStorage.getItem('myShirt'));
+});
 
 
-localStorage.setItem('favorite-flavor', 'oreo');
-
-console.log(localStorage.getItem('favorite-flavor', 'oreo'));
-
-localStorage.setItem('least-favorite-flavor', 'chocolate chip');
-
-console.log(localStorage.getItem('least-favorite-flavor', 'chocolate chip'));
-
-var car = {};
-  car.wheels = 4;
-  car.doors = 2;
-  car.sound = 'vroom';
-  car.name = 'LIghning McQueen';
-  console.log( car );
-
-  localStorage.setItem('car', JSON.stringify(car));
-  console.log(localStorage.getItem('car', JSON.stringify(car)));
-
-  var myCar = JSON.parse(localStorage.getItem('car'));
-  console.log();
+$('.button3').on('click', function(e){
+  e.preventDefault();
+  var shirt = $('#tshirt3').html();
+  var shirtQty = $('#quanity3').val();
+  var size = $('.select3 option:selected').html();
+  var shirtSelection = {shirt: shirt, shirtQty: shirtQty, size: size};
+  shirts.push(shirtSelection);
+  localStorage.setItem('myShirt', JSON.stringify(shirtSelection));
+  console.log(localStorage.getItem('myShirt'));
+});
